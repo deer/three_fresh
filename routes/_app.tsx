@@ -8,7 +8,7 @@ export default function App({ Component }: PageProps) {
         <title>three_fresh</title>
         <link rel="stylesheet" href="/styles.css" />
       </head>
-      <body class="flex">
+      <body class="flex overflow-x-hidden">
         <Component />
       </body>
     </html>

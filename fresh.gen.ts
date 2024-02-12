@@ -9,6 +9,7 @@ import * as $index from "./routes/index.tsx";
 import * as $AnimatedMesh from "./islands/AnimatedMesh.tsx";
 import * as $BasicCube from "./islands/BasicCube.tsx";
 import * as $LightingShadows from "./islands/LightingShadows.tsx";
+import * as $ScrollableSphere from "./islands/ScrollableSphere.tsx";
 import * as $Tesseract from "./islands/Tesseract.tsx";
 import * as $Torus from "./islands/Torus.tsx";
 import { type Manifest } from "$fresh/server.ts";
@@ -24,6 +25,7 @@ const manifest = {
     "./islands/AnimatedMesh.tsx": $AnimatedMesh,
     "./islands/BasicCube.tsx": $BasicCube,
     "./islands/LightingShadows.tsx": $LightingShadows,
+    "./islands/ScrollableSphere.tsx": $ScrollableSphere,
     "./islands/Tesseract.tsx": $Tesseract,
     "./islands/Torus.tsx": $Torus,
   },

@@ -5,6 +5,7 @@ export default function Home() {
     { IslandName: "AnimatedMesh", text: "Animated Mesh" },
     { IslandName: "Tesseract", text: "Tesseract" },
     { IslandName: "Torus", text: "Torus" },
+    { IslandName: "ScrollableSphere", text: "Scrollable Sphere Website" },
   ];
   return (
     <div class="px-4 py-8 mx-auto content-center">

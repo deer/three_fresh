@@ -1,7 +1,7 @@
 # Three Fresh
 
 This project is built with [Fresh](https://fresh.deno.dev/) and
-[Three.js](https://threejs.org/), leveraging the best of Deno's fresh framework
+[Three.js](https://threejs.org/), leveraging the best of Deno's Fresh framework
 for server-side rendering and Three.js for creating and displaying animated 3D
 computer graphics in a web browser.
 
