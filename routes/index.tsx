@@ -8,7 +8,7 @@ export default function Home() {
     { IslandName: "ScrollableSphere", text: "Scrollable Sphere Website" },
   ];
   return (
-    <div class="px-4 py-8 mx-auto content-center">
+    <div class="px-4 py-16 mx-auto content-center">
       <h1 class="text-2xl pb-4">Some 3d Animations made with Three.js</h1>
       <ul class="list-disc">
         {links.map((link) => (
