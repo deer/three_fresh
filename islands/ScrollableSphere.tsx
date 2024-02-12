@@ -76,13 +76,25 @@ export default function BasicCube() {
 
     let mouseDown = false;
     let rgb: [number, number, number] = [0, 0, 0];
-    globalThis.addEventListener("mousedown", () => (mouseDown = true));
-    globalThis.addEventListener("mouseup", () => (mouseDown = false));
-    globalThis.addEventListener("mousemove", (e) => {
+    const handleMouseDown = () => (mouseDown = true);
+    const handleMouseUp = () => (mouseDown = false);
+    const handleMouseMove = (e: MouseEvent | TouchEvent) => {
       if (mouseDown) {
+        let x, y;
+
+        if (e instanceof TouchEvent && e.touches) {
+          x = e.touches[0].pageX;
+          y = e.touches[0].pageY;
+        } else if (e instanceof MouseEvent) {
+          x = e.pageX;
+          y = e.pageY;
+        } else {
+          return;
+        }
+
         rgb = [
-          Math.round((e.pageX / sizes.width) * 255),
-          Math.round((e.pageY / sizes.height) * 255),
+          Math.round((x / sizes.width) * 255),
+          Math.round((y / sizes.height) * 255),
           150,
         ];
         const newColor = new THREE.Color(`rgb(${rgb.join(",")})`);
@@ -92,9 +104,23 @@ export default function BasicCube() {
           b: newColor.b,
         });
       }
-    });
+    };
+
+    globalThis.addEventListener("mousedown", handleMouseDown);
+    globalThis.addEventListener("mouseup", handleMouseUp);
+    globalThis.addEventListener("mousemove", handleMouseMove);
+
+    globalThis.addEventListener("touchstart", handleMouseDown);
+    globalThis.addEventListener("touchend", handleMouseUp);
+    globalThis.addEventListener("touchmove", handleMouseMove);
 
     return () => {
+      globalThis.removeEventListener("mousedown", handleMouseDown);
+      globalThis.removeEventListener("mouseup", handleMouseUp);
+      globalThis.removeEventListener("mousemove", handleMouseMove);
+      globalThis.removeEventListener("touchstart", handleMouseDown);
+      globalThis.removeEventListener("touchend", handleMouseUp);
+      globalThis.removeEventListener("touchmove", handleMouseMove);
       document.body.removeChild(canvas);
     };
   }, []);
