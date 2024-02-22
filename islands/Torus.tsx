@@ -25,7 +25,7 @@ export default function Torus() {
     };
 
     let container: HTMLDivElement, stats;
-    let camera: THREE.Camera,
+    let camera: THREE.PerspectiveCamera,
       scene: THREE.Scene,
       renderer: THREE.WebGLRenderer,
       controls;

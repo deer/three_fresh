@@ -1,7 +1,7 @@
 import { defineRoute } from "$fresh/server.ts";
 
 export default defineRoute(async (req, ctx) => {
-  if (!validIslands().includes(ctx.params.id)) return "";
+  if (!validIslands().includes(ctx.params.id)) return ctx.renderNotFound();
   const islandPath = `../../islands/${ctx.params.id}.tsx`;
   const component = await import(islandPath);
 

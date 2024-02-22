@@ -1,9 +1,9 @@
 # Three Fresh
 
 This project is built with [Fresh](https://fresh.deno.dev/) and
-[Three.js](https://threejs.org/), leveraging the best of Deno's Fresh framework
-for server-side rendering and Three.js for creating and displaying animated 3D
-computer graphics in a web browser.
+[Three.js](https://threejs.org/). It's mainly for demonstration purposes,
+showing how to render 3d scenes in islands. You can see the result here:
+https://three-fresh.deno.dev/
 
 ## Getting Started
 
